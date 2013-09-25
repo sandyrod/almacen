@@ -1,5 +1,5 @@
 <?php
-class empleados extends ActiveRecord{
+class Cargos extends ActiveRecord{
 
          public function paginacion($page, $per_page=25)
         {

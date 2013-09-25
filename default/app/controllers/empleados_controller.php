@@ -32,7 +32,7 @@ class EmpleadosController extends AppController
     	View::select('create');
 	$empleados = new Empleados();
 	if(Input::hasPost('empleados')){
-		if($articulos->update(Input::post('empleados'))){
+		if($empleados->update(Input::post('empleados'))){
                     Flash::success('La informacion se actualizo');
                     return Router::toAction('lists');
 	        }else{

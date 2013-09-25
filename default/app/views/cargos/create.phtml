@@ -1,0 +1,18 @@
+<?php
+	view::content();
+	echo Form::open();
+?>
+<center>
+    <table>
+        <tr>
+            <th>Cargo:</th><td> <?php echo Form::text('cargos.cargos',"maxlength='30' size='30'"); ?></td>
+        </tr>
+        
+<?php echo Form::hidden('cargos.id'); ?>
+</table></center>
+
+<center><?php echo Form::submit('aceptar'); echo Form::close(); ?>
+<br>
+<?php 
+	echo Html::link("cargos/lists/1", 'Ver Lista de cargos'); ?>
+</center>
