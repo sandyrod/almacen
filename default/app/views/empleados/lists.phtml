@@ -1,0 +1,25 @@
+<?php
+	View::content();
+?>
+<table>
+<tr><th>Cedula</th><th>Nombres</th><th>Apellidos</th><th>Opciones</th></tr>
+<?php
+	foreach($listapersona->items as $p):
+	echo "<tr><td>$p->cedula</td><td align='center'> $p->nombres </td><td> $p->apellidos </td><td>"?>
+    
+<?php 
+	echo Html::link("empleados/update/$p->id", 'Editar');
+        echo Html::link("empleados/delete/$p->id", 'Eliminar');
+	echo "</td></tr>";
+
+	endforeach; ?>
+
+</table>
+<?php
+	View::partial('paginators/digg',FALSE,array('page'=>$listapersona,'show'=>8,'url'=>'empleados/lists'))
+
+
+?>
+<br>
+<?php 
+	echo Html::link("empleados/create", 'Crear nuevo'); ?>

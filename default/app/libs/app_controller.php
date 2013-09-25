@@ -14,12 +14,20 @@ require_once CORE_PATH . 'kumbia/controller.php';
  * @category Kumbia
  * @package Controller
  */
+Load::models('bitacora');
 class AppController extends Controller
 {
+    public $site = 'http://localhost/almacen/default/';
 
     final protected function initialize()
     {
-
+                
+                View::template('krisley');
+                $bitaco = new bitacora();
+                $bitaco->clase=$this->controller_name;
+                $bitaco->metodo=$this->action_name;
+                $bitaco->usuario= Session::get('usuario');
+                $bitaco->save();
     }
 
     final protected function finalize()

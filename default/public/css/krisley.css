@@ -101,7 +101,7 @@ img {
 	height: 19px;
 	margin-left: 100px;
 	padding: 0px 0px 0px 10px;
-	background: url(../img/otro/images/templatemo_readmore.gif) no-repeat;
+	background: url(../img/minfra/templatemo_readmore.gif) no-repeat;
 	color: #FFFFFF;
 	text-decoration: none;
 }
@@ -121,14 +121,14 @@ img {
 	float: left;
 	width: 235px;
 	height: 147px;
-	background: url(../img/otro/images/templatemo_logo_background.gif) no-repeat;
+	background: url(../img/minfra/templatemo_logo_background.gif) no-repeat;
 }
 
 .sitelogo {
 	margin: 20px 0px 0px 20px;
 	padding: 0px;
 	height: 80px;
-	background:url(../img/otro/images/company_logo.gif) no-repeat;	
+	background:url(../img/minfra/company_logo.gif) no-repeat;	
 }
 
 .sitename {
@@ -148,7 +148,7 @@ img {
 	float: right;
 	width: 690px;
 	height: 147px;
-	background: url(../img/otro/images/templatemo_heading_background.jpg) no-repeat;
+	background: url(../img/minfra/templatemo_heading_background.jpg) no-repeat;
 }
 
 #header .title{
@@ -182,7 +182,7 @@ img {
 	width: 225px;
 	height: 28px;
 	padding: 7px 0px 0px 10px;
-	background: url(../img/otro/images/templatemo_menu_background.gif) repeat-x;
+	background: url(../img/minfra/templatemo_menu_background.gif) repeat-x;
 }
 
 #menu {
@@ -190,7 +190,7 @@ img {
 	width: 690px;
 	height: 35px;
 	margin: 0px;
-	background: url(../img/otro/images/templatemo_menu_background.gif) repeat-x;
+	background: url(../img/minfra/templatemo_menu_background.gif) repeat-x;
 
 }
 
@@ -218,7 +218,7 @@ img {
 
 #menu ul li a:hover, #menu ul li .current {
 	color: #FFF;
-	background: url(../img/otro/images/templatemo_menuhover_background.gif) repeat-x;
+	background: url(../img/minfra/templatemo_menuhover_background.gif) repeat-x;
 }
 
 /* ---------- End of Menu ------------- */
@@ -278,7 +278,7 @@ img {
 	width: 195px;
 	height: 15px;
 	padding: 10px;
-	background: url(../img/otro/images/templatemo_leftsection_top.gif) no-repeat;		
+	background: url(../img/minfra/templatemo_leftsection_top.gif) no-repeat;		
 }
 #leftcolumn_box01 .leftcolumn_box01_bottom{
 	width: 195px;
@@ -310,7 +310,7 @@ img {
 	margin: 0px;
 	color: #ffffff;
 	text-decoration: none;
-	background: url(../img/otro/images/templatemo_list_icon02.gif) center left no-repeat;
+	background: url(../img/minfra/templatemo_list_icon02.gif) center left no-repeat;
 }
 
 #leftcolumn_box02 ul li a:hover{
@@ -343,7 +343,7 @@ img {
 #section2 .section2_top{
 	height: 24px;
 	padding: 10px 0px 0px 10px;
-	background: url(../img/otro/images/templatemo_section2_title.gif) no-repeat;
+	background: url(../img/minfra/templatemo_section2_title.gif) no-repeat;
 }
 #section2 .section2_bottom{
 	float: left;
@@ -367,12 +367,12 @@ img {
 	margin: 0px;
 	color: #000000;
 	text-decoration: none;
-	background: url(../img/otro/images/templatemo_list_icon01.gif) center left no-repeat;
+	background: url(../img/minfra/templatemo_list_icon01.gif) center left no-repeat;
 }
 
 #section2 ul li a:hover{
 	color: #ffffff;
-	background: url(../img/otro/images/templatemo_list_icon02.gif) center left no-repeat;
+	background: url(../img/minfra/templatemo_list_icon02.gif) center left no-repeat;
 }
 
 
@@ -386,7 +386,7 @@ img {
 	padding: 10px 5px;
 	color:#FFFFFF;
 	font-size: 15px;
-	background: url(../img/otro/images/templatemo_rightsection_background.gif) no-repeat;	
+	background: url(../img/minfra/templatemo_rightsection_background.gif) no-repeat;	
 	margin: 0px 0px 10px 5px;	
 }
 
@@ -397,7 +397,7 @@ img {
 	height: 48px;
 	margin: 0px 0px 10px 5px;
 	padding: 10px 20px 0px 10px;
-	background: url(../img/otro/images/templatemo_rightsection_background.gif) no-repeat;
+	background: url(../img/minfra/templatemo_rightsection_background.gif) no-repeat;
 	color:#FFFFFF;
 	font-size: 18px;
 	text-decoration: none;
@@ -413,7 +413,7 @@ img {
 	width: 190px;
 	height: 25px;
 	padding: 10px 0px 0px 0px;
-	background: #008fc1 url(../img/otro/images/templatemo_rightsection_top.gif) no-repeat;
+	background: #008fc1 url(../img/minfra/templatemo_rightsection_top.gif) no-repeat;
 }
 #right_box02 .rightbox02_bottom{
 	width: 170px;
@@ -450,12 +450,12 @@ label {
 
 input{
 	/*width: 110px;*/
-	height: 18px;
+	height: 28px;
 }
 
 .button{
 	width: 60px;
-	height: 25px;
+	height: 32px;
 }
 
 
@@ -478,7 +478,7 @@ input{
 	height: 10px;
 	margin: 0px;
 	padding: 0px;
-	background: #d5d5d5 url(../img/otro/images/templatemo_footer_bottom.gif) no-repeat;
+	background: #d5d5d5 url(../img/minfra/templatemo_footer_bottom.gif) no-repeat;
 }
 
 /* IE6 hack */
@@ -487,7 +487,7 @@ input{
 	height: 10px;
 	margin-bottom: -10px;
 	padding: 0px;
-	background: #d5d5d5 url(../img/otro/images/templatemo_footer_bottom.gif) no-repeat;
+	background: #d5d5d5 url(../img/minfra/templatemo_footer_bottom.gif) no-repeat;
 }
 
 #templatemo_footer a{

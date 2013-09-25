@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php Tag::css('krisley')?>
+<?php Tag::css('datepicker')?>
+<?php Tag::css('jquery.autocomplete') ?>
+<?php echo Tag::js('jquery/jquery+kumbiaphp.min')?>
+<?php echo Tag::js('datepicker/datepicker')?>
+<?php echo Tag::js('jquery/jquery.autocomplete')?>
+<?php echo Tag::js('jquery/combos')?>
+<?php echo Tag::js('datepicker/lang/es')?>
+<?php echo Html::includeCss()?>
+    
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Almacen MPPTT</title>
+<meta name="keywords" content="Business Website, free templates, website templates, 3-column layout, CSS, XHTML" />
+<meta name="description" content="Business Website, 3-column layout, free CSS template from templatemo.com" />
+
+
+</head>
+
+    <body><div align="center">
+    <img src="../public/img/minfra/img03.png">
+    </img>
+    </div>
+<div id="templatemo_container">
+   
+    <div id="templatemo_header">
+    	<div id="logosection">
+	        <div class="sitelogo"></div>
+        	<div class="sitename">            	
+            	SICA<span></span>            </div>
+      </div>
+        <div id="header">
+            
+            <div class="title">
+            	
+	        	<span class="bigtext">Departamento de Almacén</div>
+
+        </div>
+	</div>
+    
+	<div id="templatemo_menu">
+    	<div id="search">
+				
+    	</div>
+        <div id="menu">
+
+        </div>
+	</div>
+    
+    <!-- start of content -->
+    
+	<div id="templatemo_content">
+    
+    	<!-- start of left column -->
+    
+    	<div id="templatemo_left_column">        	
+
+            <div id="leftcolumn_box01">
+                <div class="leftcolumn_box01_top">
+                    <h2>Usuario Actual:</h2>
+                </div>
+                <div class="leftcolumn_box01_bottom">
+		    <?php echo Session::get('usuario');
+
+                    ?>
+                </div>            
+            </div>
+            
+            <div id="leftcolumn_box02">
+            	<h2>Menu</h2>
+                <ul>
+                    <li><a href="<? echo $site . 'salida/create/'?>" target="_parent">Salidas</a></li>
+                    <li><a href="<? echo $site . 'jefes/create/'?>" target="_parent">Jefes</a></li>
+                    <li><a href="<? echo $site . 'articulos/create/'?>" target="_parent">Articulos</a></li>
+                    <li><a href="<? echo $site . 'departamento/create/'?>" target="_parent">Departamento</a></li>
+                    <li><a href="<? echo $site . 'empleado/create/'?>" target="_parent">Empleado</a></li>
+                    <li><a href="<? echo $site . 'matinsumo/create/'?>" target="_parent">Materiales e Insumos</a></li>
+                    <li><a href="<? echo $site . 'receptor/create/'?>" target="_parent">Receptor</a></li>
+                    <li><a href="<? echo $site . 'requisicion/create/'?>" target="_parent">Requisicion</a></li>
+                    <li><a href="<? echo $site . 'usuarios/create/'?>" target="_parent">Usuarios</a></li>
+                    <li>                    
+                        <?php if(Session::get('usuario')){?>
+                        <a href="<? echo $site . 'usuarios/salir/'?>">Salir</a>
+                    <?php }?>
+                    </li>
+                </ul>
+            </div>
+            
+			<div id="imagebutton">
+            	
+			</div>
+            
+        </div>
+        
+        <!-- end of left column -->
+        
+        <!-- start of middle column -->
+        
+        <div id="templatemo_middle_column" align="center">
+        
+        	
+                <p align="center">
+             <?php View::content(); ?>
+
+            </p> <br />
+            
+            <!--<div id="section1">
+            	
+          </div>
+            
+            <div id="section2">
+                <div class="section2_top">
+                    
+                </div>
+                <div class="section2_bottom">
+			      
+                    <div class="more_button"></div>
+            	</div>
+            </div>
+            -->
+        </div>
+        
+        <!-- end of middle column -->
+        
+        <!-- start of right column -->
+
+        
+        
+        <!-- end of right column -->
+    
+    </div>
+    
+    <!-- end of content -->
+        
+        
+	<div id="templatemo_footer">
+        <a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Services</a> | <a href="#">Solutions</a> | <a href="#">Contact Us</a><br />
+        Copyright ©  <a href="#">Your Company Name</a> | Designed by <a href="http://www.templatemo.com" target="_blank">templatemo.com</a></div>
+    <div id="templatemo_footer_bottom"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?php
+	view::content();
+	echo Form::open();
+?>
+<center>
+    <table>
+        <tr>
+            <th>Cedula:</th><td> <?php echo Form::text('empleados.cedula',"maxlength='10' size='10'"); ?></td>
+        </tr>
+        <tr>
+            <th>Nombres:</th><td><?php echo Form::text('empleados.nombres',"maxlength='40' size='40'"); ?></td>
+        </tr>
+        <tr>
+            <th>Apellidos:</th><td><?php echo Form::text('empleados.apellidos',"maxlength='40' size='40'"); ?></td>
+        </tr>
+        <tr>
+            <th>Cargo:</th><td> <?php echo Form::text('empleados.cargo_id',"maxlength='20' size='20'"); ?></td>
+        </tr>
+        <tr>
+            <th>Departamento:</th><td><?php echo Form::text('empleados.departamento_id',"maxlength='20' size='20'"); ?></td>
+        </tr>
+        
+<?php echo Form::hidden('empleados.id'); ?>
+</table></center>
+
+<center><?php echo Form::submit('aceptar'); echo Form::close(); ?>
+<br>
+<?php 
+	echo Html::link("empleados/lists/1", 'Vet Lista de empleados'); ?>
+</center>

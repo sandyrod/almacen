@@ -1,0 +1,25 @@
+<?php
+	View::content();
+?>
+<table>
+<tr><th>Codigo Material</th><th>Sub Cuenta</th><th>Descripcion</th><th>Opciones</th></tr>
+<?php
+	foreach($listapersona->items as $p):
+	echo "<tr><td>$p->cod_mat</td><td align='center'> $p->subcuenta </td><td> $p->descripcion </td><td>"?>
+    
+<?php 
+	echo Html::link("articulos/update/$p->id", 'Editar');
+        echo Html::link("articulos/delete/$p->id", 'Eliminar');
+	echo "</td></tr>";
+
+	endforeach; ?>
+
+</table>
+<?php
+	View::partial('paginators/digg',FALSE,array('page'=>$listapersona,'show'=>8,'url'=>'articulos/lists'))
+
+
+?>
+<br>
+<?php 
+	echo Html::link("articulos/create", 'Crear nuevo'); ?>

@@ -103,7 +103,7 @@ class Controller
      */
     protected function initialize()
     {
-        
+    
     }
 
     /**

@@ -1,0 +1,25 @@
+<?php
+	View::content();
+?>
+<table>
+<tr><th>Departamento</th><th>Opciones</th></tr>
+<?php
+	foreach($listapersona->items as $p):
+	echo "<tr><td>$p->nomb_dep</td><td>"?>
+    
+<?php 
+	echo Html::link("departamentos/update/$p->id", 'Editar');
+        echo Html::link("departamentos/delete/$p->id", 'Eliminar');
+	echo "</td></tr>";
+
+	endforeach; ?>
+
+</table>
+<?php
+	View::partial('paginators/digg',FALSE,array('page'=>$listapersona,'show'=>8,'url'=>'departamentos/lists'))
+
+
+?>
+<br>
+<?php 
+	echo Html::link("departamentos/create", 'Crear nuevo'); ?>
