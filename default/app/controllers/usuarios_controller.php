@@ -15,14 +15,19 @@ class UsuariosController extends AppController{
          */
         public function login(){
             //verifico si se han enviado los datos
+            echo "sinhaspost";
         if (Input::hasPost("login","clave")){
-            if (Session::get('intento')>3){
+            echo "haspost";
+            
+            if (Session::get('intento')>23){
                 Flash::error('Supero el maximo de intentos, intente mas tarde');
             }else{
             //encriptamos la clave utilizando md5
             $pwd = md5(Input::post("clave"));
             //extraemos el login
             $usuario=Input::post("login");
+            echo $pwd;
+            //Router::redirect("articulos/create");
             /*Utlizamos la clase auth ya que la misma a sido probada por distintas organizaciones
              *y es resistente a distintas tecnicas de hacking
              *Instanciamos la clase auth y le pasamos los parametros
@@ -129,7 +134,6 @@ class UsuariosController extends AppController{
                 //elimino la variable de sesion usuario
 		Session::delete('usuario');
                 Session::delete('intento');
-                Session_destroy();
                 //redirecciono a login para que no tenga acceso hasta que validemos sus datos
                 Router::redirect("usuarios/login");
 	}
