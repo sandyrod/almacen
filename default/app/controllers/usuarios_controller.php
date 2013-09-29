@@ -15,9 +15,9 @@ class UsuariosController extends AppController{
          */
         public function login(){
             //verifico si se han enviado los datos
-            echo "sinhaspost";
+            
         if (Input::hasPost("login","clave")){
-            echo "haspost";
+            
             
             if (Session::get('intento')>23){
                 Flash::error('Supero el maximo de intentos, intente mas tarde');
@@ -51,7 +51,7 @@ class UsuariosController extends AppController{
 	        //$user->id);
                 //redirecciono a la pantalla inicial que desee
                 Flash::success("Bienvenidos a SICA");
-                Router::redirect("articulos/create");
+                Router::redirect("usuarios/clear");
             } else {
                 /*Si el metodo autenticar devolvio falso quiere decir que el usuario no es valido
                  * por lo tanto envio uni mensaje inforando y me mantengo en la misma pantalla
@@ -165,13 +165,17 @@ class UsuariosController extends AppController{
                                     $this->nombre = $producto->nombre;
                                     $this->apellido = $producto->apellido;
                                     $this->correo = $producto->correo;
-                                    $this->cedula = $producto->cedula;
+                                    $this->cedula = $productreateo->cedula;
                                     $this->contrasenna = $producto->contrasenna;
                                     $this->nomb_usuario = $producto->nomb_usuario;
                                     $this->id=$producto->id;
                                 }
 			}
 		
+        }
+        public function clear()
+        {
+            
         }
 }
 //Fin de la clase usuarios

@@ -39,7 +39,7 @@ class ArticulosController extends AppController
                     Flash::error('No se puede modificar el articulo');
 	        }
 	}else{		
-	     $this->articulos = $articulos->find($id);
+	     $this->articulo = $articulos->find($id);
    	}
 
     }
