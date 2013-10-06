@@ -8,34 +8,36 @@
             <th>Codigo Material:</th><td> <?php echo Form::text('articulo.cod_mat',"maxlength='30' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Subcuenta:</th><td><?php echo Form::text('articulo.subcuenta'); ?></td>
+            <th>Subcuenta:</th><td><?php echo Form::text('articulo.subcuenta',"maxlength='30' size='30'"); ?></td>
         </tr>
         <tr>
             <th>Descripcion:</th><td><?php echo Form::text('articulo.descripcion'," size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Cantidad:</th><td> <?php echo Form::text('articulo.cant',"maxlength='3' size='3'"); ?></td>
+            <th>Cantidad:</th><td> <?php echo Form::text('articulo.cant',"maxlength='3' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Existencia minima:</th><td><?php echo Form::text('articulo.stock_minimo',"maxlength='3' size='3'"); ?></td>
+            <th>Existencia minima:</th><td><?php echo Form::text('articulo.stock_minimo',"maxlength='3' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Existencia maxima:</th><td><?php echo Form::text('articulo.stocm_maximo',"maxlength='3' size='3'"); ?></td>
+            <th>Existencia maxima:</th><td><?php echo Form::text('articulo.stocm_maximo',"maxlength='3' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Ubicacion:</th><td> <?php echo Form::text('articulo.ubicacion',"maxlength='150' size='60'"); ?></td>
+            <th>Ubicacion:</th><td> <?php echo Form::text('articulo.ubicacion',"maxlength='150' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Tipo Articulo:</th><td><?php echo Form::text('articulo.tipo'); ?></td>
+            <th>Tipo Articulo:</th><td><?php echo Form::text('articulo.tipo',"maxlength='30' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Ultimo Precio:</th><td><?php echo Form::text('articulo.descripcion'," maxlength='6' size='6'"); ?></td>
+            <th>Ultimo Precio:</th><td><?php echo Form::text('articulo.descripcion'," maxlength='6' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Costo Promedio:</th><td> <?php echo Form::text('articulo.precio_pro',"maxlength='6' size='6'"); ?></td>
+            <th>Costo Promedio:</th><td> <?php echo Form::text('articulo.precio_pro',"maxlength='6' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Unidad de Medida:</th><td><?php echo Form::text('articulo.unidad_med',"maxlength='30' size='30'"); ?></td>
+            <th>Unidad de Medida:</th><td>
+                <?php echo Form::dbSelect('articulo.unidad_med', 'unidad', array('unidades', 'find'), 'Seleccione...');?>
+                </td>
         </tr>
         <tr>
             <th>Descripcion:</th><td><?php echo Form::text('articulo.descripcion'," size='30'"); ?></td>

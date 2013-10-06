@@ -50,7 +50,7 @@ class UsuariosController extends AppController{
 		}
 	        //$user->id);
                 //redirecciono a la pantalla inicial que desee
-                Flash::success("Bienvenidos a SICA");
+                //Flash::success("Bienvenidos a SICA");
                 Router::redirect("usuarios/clear");
             } else {
                 /*Si el metodo autenticar devolvio falso quiere decir que el usuario no es valido

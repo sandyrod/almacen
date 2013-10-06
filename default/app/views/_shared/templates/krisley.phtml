@@ -4,11 +4,14 @@
 <?php Tag::css('krisley')?>
 <?php Tag::css('datepicker')?>
 <?php Tag::css('jquery.autocomplete') ?>
+<?php Tag::css('../javascript/extjs4.2/resources/css/ext-all')?>
 <?php echo Tag::js('jquery/jquery+kumbiaphp.min')?>
 <?php echo Tag::js('datepicker/datepicker')?>
 <?php echo Tag::js('jquery/jquery.autocomplete')?>
 <?php echo Tag::js('jquery/combos')?>
 <?php echo Tag::js('datepicker/lang/es')?>
+<?php echo Tag::js('extjs4.2/ext-all-debug')?>
+<?php echo Tag::js('grid')?>
 <?php echo Html::includeCss()?>
     
 
@@ -73,12 +76,12 @@
             	<h2>Menu</h2>
                 <ul>
                     <li><a href="<? echo $site . 'cargos/create/'?>" target="_parent">Cargos</a></li>
-                    
+                    <li><a href="<? echo $site . 'unidades/create/'?>" target="_parent">Unidades</a></li>
                     <li><a href="<? echo $site . 'articulos/create/'?>" target="_parent">Articulos</a></li>
                     <li><a href="<? echo $site . 'departamentos/create/'?>" target="_parent">Departamento</a></li>
-                    <li><a href="<? echo $site . 'empleado/create/'?>" target="_parent">Empleado</a></li>
-                    
-                    
+                    <li><a href="<? echo $site . 'empleados/create/'?>" target="_parent">Empleado</a></li>
+                    <li><a href="<? echo $site . 'requisiciones/create/'?>" target="_parent">Requisicion</a></li>
+                    <li><a href="<? echo $site . 'Despachos/create/'?>" target="_parent">Despachos</a></li>
                     <li><a href="<? echo $site . 'usuarios/create/'?>" target="_parent">Usuarios</a></li>
                     <li>                    
                         <?php if(Session::get('usuario')){?>

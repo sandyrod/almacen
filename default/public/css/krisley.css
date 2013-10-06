@@ -85,8 +85,8 @@ img {
 	margin: 0px 5px 0px 0px;
 	padding: 0px;
 	float: left;
-	height: 19px;
-	width: 175px;
+	height: 10px;
+	width: 15px;
 	font: 12px Arial;
 	font-weight: normal;
 	color: #333333;
@@ -450,7 +450,11 @@ label {
 
 input{
 	/*width: 110px;*/
-	height: 28px;
+	height: 20px;
+}
+select{
+	width: 265px;
+	height: 26px;
 }
 
 .button{

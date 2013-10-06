@@ -1,0 +1,25 @@
+<?php
+	View::content();
+?>
+<table>
+<tr><th>Cargo</th><th>Opciones</th></tr>
+<?php
+	foreach($listapersona->items as $p):
+	echo "<tr><td>$p->unidad</td><td>"?>
+    
+<?php 
+	echo Html::link("unidades/update/$p->id", 'Editar');
+        echo Html::link("unidades/delete/$p->id", 'Eliminar');
+	echo "</td></tr>";
+
+	endforeach; ?>
+
+</table>
+<?php
+	View::partial('paginators/digg',FALSE,array('page'=>$listapersona,'show'=>8,'url'=>'unidades/lists'))
+
+
+?>
+<br>
+<?php 
+	echo Html::link("unidades/create", 'Crear nuevo'); ?>

@@ -1,0 +1,18 @@
+<?php
+	view::content();
+	echo Form::open();
+?>
+<center>
+    <table>
+        <tr>
+            <th>Unidades:</th><td> <?php echo Form::text('unidades.unidad',"maxlength='30' size='30'"); ?></td>
+        </tr>
+        
+<?php echo Form::hidden('unidades.id'); ?>
+</table></center>
+
+<center><?php echo Form::submit('aceptar'); echo Form::close(); ?>
+<br>
+<?php 
+	echo Html::link("unidades/lists/1", 'Ver Lista de unidades'); ?>
+</center>
