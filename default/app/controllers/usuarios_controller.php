@@ -26,7 +26,7 @@ class UsuariosController extends AppController{
             $pwd = md5(Input::post("clave"));
             //extraemos el login
             $usuario=Input::post("login");
-            echo $pwd;
+            //echo $pwd;
             //Router::redirect("articulos/create");
             /*Utlizamos la clase auth ya que la misma a sido probada por distintas organizaciones
              *y es resistente a distintas tecnicas de hacking
