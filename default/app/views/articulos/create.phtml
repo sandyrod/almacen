@@ -2,16 +2,33 @@
 	view::content();
 	echo Form::open();
 ?>
+<script>
+	$(function() {
+		
+		<?php
+
+$arreglo= implode(", ", $query);//junta los valores del array en una sola cadena de texto
+		?>	
+		
+		var availableTags=new Array(<?php echo $arreglo; ?>);//imprime el arreglo dentro de un array de javascript
+				
+		$( "#articulo_descripcion" ).autocomplete({
+			source: availableTags
+		});
+	});
+        </script>
 <center>
     <table>
         <tr>
+         
+        <br>
             <th>Codigo Material:</th><td> <?php echo Form::text('articulo.cod_mat',"maxlength='30' size='30'"); ?></td>
         </tr>
         <tr>
             <th>Subcuenta:</th><td><?php echo Form::text('articulo.subcuenta',"maxlength='30' size='30'"); ?></td>
         </tr>
         <tr>
-            <th>Descripcion:</th><td><?php echo Form::text('articulo.descripcion'," size='30'"); ?></td>
+            <th>Descripcion:</th><td><?php echo Form::text('articulo.descripcion'," size='30'"); ?><input type="button" class="control_input" id="ira" name="ira" value="Ir a" /></td>
         </tr>
         <tr>
             <th>Cantidad:</th><td> <?php echo Form::text('articulo.cant',"maxlength='3' size='30'"); ?></td>

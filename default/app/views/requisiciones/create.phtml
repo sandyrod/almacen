@@ -1,1 +1,19 @@
-   <div id="editor-grid"></div>
+<div id="encabezado">
+    <?php echo Form::open()?>
+    <table>
+        <tr>
+            <tH>Nro Requisicion:</th><td><?php echo Form::text('requisicion.id',"maxlength='10' size='30'",'####')?></td>
+        </tr>
+        <tr>
+            <th>Fecha Inicial:</th><td><?php echo Form::date('requisicion.fecha_at')?></td>
+        </tr>
+        <tr>
+            <th>Estatus de la Requisicion:</th><td><?php echo Form::text('requisicion.id',"maxlength='10' size='30'")?></td>
+        </tr>
+        <tr>
+            <th>Solicitante:</th><td><?php echo Form::text('requisicion.id',"maxlength='10' size='30'")?></td>
+        </tr>
+    </table>
+</div>
+<div id="editor-grid"></div>
+<?php echo Form::submit('Guardar')?>
