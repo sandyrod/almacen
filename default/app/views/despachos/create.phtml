@@ -1,1 +1,13 @@
-<div id="editor-grid"></div>
+<div id="encabezado">
+    <?php echo Form::open()?>
+    <table>
+        <tr>
+            <tH>Nro Requisicion:</th><td><?php echo Form::text('despacho.requisicion_id',"maxlength='10' size='30'")?></td>
+        </tr>
+        <tr>
+            <tH>Nro de Despacho:</th><td><?php echo Form::text('despaho.id',"maxlength='10' size='30'")?></td>
+        </tr>
+        
+    </table>
+</div>
+<div id="grid_despacho"></div>
