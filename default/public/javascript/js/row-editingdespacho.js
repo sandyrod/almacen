@@ -8,7 +8,7 @@ Ext.require([
 
 Ext.onReady(function(){
     // Define our data model
-    Ext.define('Employee', {
+    Ext.define('Employe1', {
         extend: 'Ext.data.Model',
         fields: [
             'descripcion',
@@ -27,8 +27,8 @@ Ext.onReady(function(){
     // create the Data Store
     var store = Ext.create('Ext.data.Store', {
         // destroy the store if the grid is destroyed
-        autoDestroy: true,
-        model: 'Employee',
+        //autoDestroy: true,
+        model: 'Employe1',
         autoLoad: true,
         
     });
@@ -77,7 +77,7 @@ Ext.onReady(function(){
                 rowEditing.cancelEdit();
 
                 // Create a model instance
-                var r = Ext.create('Employee', {
+                var r = Ext.create('Employe1', {
                     name: 'New Guy',
                     email: 'new@sencha-test.com',
                     start: Ext.Date.clearTime(new Date()),
@@ -89,7 +89,7 @@ Ext.onReady(function(){
                 rowEditing.startEdit(0, 0);
             }
         }, {
-            itemId: 'removeEmployee',
+            itemId: 'removeEmploye1',
             text: 'Eliminar Articulos',
             iconCls: 'employee-remove',
             handler: function() {
@@ -105,7 +105,7 @@ Ext.onReady(function(){
         plugins: [rowEditing],
         listeners: {
             'selectionchange': function(view, records) {
-                grid.down('#removeEmployee').setDisabled(!records.length);
+                grid.down('#removeEmploye1').setDisabled(!records.length);
             }
         }
     });
