@@ -85,4 +85,16 @@ class ArticulosController extends AppController
         echo $articulos->obtener_lista();
         //echo "algo";
     }
+        public function buscar() 
+    {
+    	View::select(NULL);
+        View::template(NULL);
+	$articulos = new Articulos();
+	if(Input::hasPost('articulos')){	
+	     $this->articulo = $articulos->find(Input::post('articulo'));
+   	}
+        
+        Flash::error("No se puede eliminar, verifique los datos". $this->articulo);
+        //echo $articulo;
+    }
 }

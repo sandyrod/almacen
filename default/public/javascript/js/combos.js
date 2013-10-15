@@ -70,12 +70,12 @@ $('#ira').click(function(){
         articulo: $("#articulo_descripcion").val()
     }
             $.ajax({
-            type:"GET",
+            type:"POST",
             dataType: "html",
-            url: "articulo/buscar/",
+            url: "http://localhost/almacen/default/articulos/buscar/",
             data: form_data,
             success:function(msg){
-                $("#articuloencontrado").html(msg);
+                $("#articulo_descripcion").html(msg);
 				
             }
         })

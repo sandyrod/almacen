@@ -14,7 +14,7 @@ Ext.onReady(function(){
             'descripcion',
             'cant',
             { name: 'start', type: 'date', dateFormat: 'n/j/Y' },
-            { name: 'cant', type: 'float' },
+            { name: 'cantsolic', type: 'float' },
             { name: 'active', type: 'bool' }
         ],
         proxy:{
@@ -31,6 +31,7 @@ Ext.onReady(function(){
         autoDestroy: true,
         model: 'Employee',
         autoLoad: true,
+        autoSync: true,
         
     });
 
@@ -62,14 +63,14 @@ Ext.onReady(function(){
                 xtype: 'datefield',
                 allowBlank: false,
                 format: 'm/d/Y',
-                minValue: '01/10/2013',
-                minText: 'Cannot have a start date before the company existed!',
-                maxValue: Ext.Date.format(new Date(), 'm/d/Y')
+                minValue: Ext.Date.format(new Date(), 'm/d/Y'),
+                minText: 'La fecha no puede ser menor a la actual'
+                //maxValue: Ext.Date.format(new Date(), 'm/d/Y')
             }
         }, {
             xtype: 'numbercolumn',
             header: 'Cant Solicitada',
-            dataIndex: 'salary',
+            dataIndex: 'cantsolic',
             format: '0,0',
             width: 90,
             editor: {
