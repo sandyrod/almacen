@@ -8,14 +8,13 @@ Ext.require([
 
 Ext.onReady(function(){
     // Define our data model
-    Ext.define('Employee', {
+    Ext.define('Employe1', {
         extend: 'Ext.data.Model',
         fields: [
             'descripcion',
             'cant',
-            { name: 'start', type: 'date', dateFormat: 'n/j/Y' },
-            { name: 'cantsolic', type: 'float' },
-            { name: 'active', type: 'bool' }
+            { name: 'cant2', type: 'float' },
+           
         ],
         proxy:{
             type: 'ajax',
@@ -28,10 +27,9 @@ Ext.onReady(function(){
     // create the Data Store
     var store = Ext.create('Ext.data.Store', {
         // destroy the store if the grid is destroyed
-        autoDestroy: true,
-        model: 'Employee',
+        //autoDestroy: true,
+        model: 'Employe1',
         autoLoad: true,
-        autoSync: true,
         
     });
 
@@ -44,7 +42,11 @@ Ext.onReady(function(){
     // to use for the editor at each column.
     var grid = Ext.create('Ext.grid.Panel', {
         store: store,
-        columns: [{
+        columns: [
+        {
+          header: 'Nro',
+          xtype: 'rownumberer',
+        }, {
             header: 'Descripcion',
             dataIndex: 'descripcion',
             flex: 1,
@@ -54,23 +56,10 @@ Ext.onReady(function(){
             dataIndex: 'cant',
             width: 160,
             
-        }, {
-            xtype: 'datecolumn',
-            header: 'Fecha solicitud',
-            dataIndex: 'start',
-            width: 90,
-            editor: {
-                xtype: 'datefield',
-                allowBlank: false,
-                format: 'm/d/Y',
-                minValue: Ext.Date.format(new Date(), 'm/d/Y'),
-                minText: 'La fecha no puede ser menor a la actual'
-                //maxValue: Ext.Date.format(new Date(), 'm/d/Y')
-            }
-        }, {
+        },  {
             xtype: 'numbercolumn',
-            header: 'Cant Solicitada',
-            dataIndex: 'cantsolic',
+            header: 'Cant Entregada',
+            dataIndex: 'salary',
             format: '0,0',
             width: 90,
             editor: {
@@ -80,10 +69,10 @@ Ext.onReady(function(){
                 maxValue: 150000
             }
         }, ],
-        renderTo: 'editor-grid',
+        renderTo: 'editor_grid',
         width: 600,
         height: 400,
-        title: 'Articulos Solicitados',
+        title: 'Articulos Despachados',
         frame: true,
         tbar: [{
             text: 'Agregar Articulos',
@@ -92,7 +81,7 @@ Ext.onReady(function(){
                 rowEditing.cancelEdit();
 
                 // Create a model instance
-                var r = Ext.create('Employee', {
+                var r = Ext.create('Employe1', {
                     name: 'New Guy',
                     email: 'new@sencha-test.com',
                     start: Ext.Date.clearTime(new Date()),
@@ -104,7 +93,7 @@ Ext.onReady(function(){
                 rowEditing.startEdit(0, 0);
             }
         }, {
-            itemId: 'removeEmployee',
+            itemId: 'removeEmploye1',
             text: 'Eliminar Articulos',
             iconCls: 'employee-remove',
             handler: function() {
@@ -120,7 +109,7 @@ Ext.onReady(function(){
         plugins: [rowEditing],
         listeners: {
             'selectionchange': function(view, records) {
-                grid.down('#removeEmployee').setDisabled(!records.length);
+                grid.down('#removeEmploye1').setDisabled(!records.length);
             }
         }
     });

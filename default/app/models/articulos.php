@@ -39,4 +39,4 @@ public $debug = false;
             return $tirajson;
     }
     
-                }
+}

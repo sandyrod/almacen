@@ -69,15 +69,22 @@ $('#ira').click(function(){
     var form_data = {
         articulo: $("#articulo_descripcion").val()
     }
-            $.ajax({
+    $(location).attr('href',"http://localhost/almacen/default/articulos/buscar/" + $("#articulo_descripcion").val());
+    /*
+        $.post("http://localhost/almacen/default/articulos/buscar/", {articulo: $("#articulo_descripcion").val()}, function(respuesta) {
+        //console.log("La respuesta es:", respuesta)
+      });
+    */
+         /*   $.ajax({
             type:"POST",
             dataType: "html",
             url: "http://localhost/almacen/default/articulos/buscar/",
             data: form_data,
             success:function(msg){
+                $(location).attr('href',"http://localhost/almacen/default/articulos/buscar/");
                 $("#articulo_descripcion").html(msg);
 				
             }
-        })
+        })*/
 })
 })

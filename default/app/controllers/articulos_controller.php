@@ -68,8 +68,8 @@ class ArticulosController extends AppController
     }
     //fin metodo listar
         public function autocomplete() {
-        View::template(NULL);
-        View::select(NULL);
+        //View::template(NULL);
+        View::select('create');
         //if (Input::isAjax()) { //solo devolvemos los estados si se accede desde ajax 
             $busqueda = Input::post('busqueda');
             $estados = Load::model('estados')->obtener_estados($busqueda);
@@ -85,16 +85,15 @@ class ArticulosController extends AppController
         echo $articulos->obtener_lista();
         //echo "algo";
     }
-        public function buscar() 
+        public function buscar($valor=null) 
     {
     	View::select(NULL);
         View::template(NULL);
 	$articulos = new Articulos();
-	if(Input::hasPost('articulos')){	
-	     $this->articulo = $articulos->find(Input::post('articulo'));
-   	}
+	
+	     $articulo = $articulos->find_first("conditions: descripcion= '" . $valor ."'","limit: 1");
+   	
+        return Router::toAction("update/$articulo->id");
         
-        Flash::error("No se puede eliminar, verifique los datos". $this->articulo);
-        //echo $articulo;
     }
 }

@@ -68,7 +68,7 @@ Ext.onReady(function(){
         renderTo: 'grid_despacho',
         width: 600,
         height: 400,
-        title: 'Articulos Solicitados',
+        title: 'Articulos Despachados',
         frame: true,
         tbar: [{
             text: 'Agregar Articulos',
