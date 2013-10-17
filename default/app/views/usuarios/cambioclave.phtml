@@ -1,0 +1,25 @@
+<?php
+	view::content();
+	echo Form::open();
+?>
+<center>
+    <table>
+        <tr>
+            <th>Contraseña Actual:</th><td> <?php echo Form::text('nomb_usuario',"maxlength='100' size='30'"); ?></td>
+        </tr>
+        <tr>
+            <th>Nueva Contraseña:</th><td> <?php echo Form::text('nombre',"maxlength='100' size='30'"); ?></td>
+        </tr>
+        <tr>
+            <th>Confirme Nueva Contraseña:</th><td> <?php echo Form::text('apellido',"maxlength='100' size='30'"); ?></td>
+        </tr>
+<?php echo Form::hidden('id'); ?>
+</table></center>
+
+<center><?php echo Form::submit('Aceptar'); echo Form::close(); ?>
+<br>
+<?php
+	echo Html::link("usuarios/cambioclave",'Modificar Contraseña'); 
+	if (Session::get('usuario')=='root')
+		echo Html::link("usuarios/lists/1", 'Ver Lista de Usuarios del Sistema'); ?>
+</center>

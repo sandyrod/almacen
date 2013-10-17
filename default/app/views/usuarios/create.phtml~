@@ -1,0 +1,27 @@
+<?php
+	view::content();
+	echo Form::open();
+?>
+<center>
+    <table>
+        <tr>
+            <th>Nombre de Usuario:</th><td> <?php echo Form::text('nomb_usuario',"maxlength='100' size='30'"); ?></td>
+        </tr>
+        <tr>
+            <th>Nombre:</th><td> <?php echo Form::text('nombre',"maxlength='100' size='30'"); ?></td>
+        </tr>
+        <tr>
+            <th>Apellido:</th><td> <?php echo Form::text('apellido',"maxlength='100' size='30'"); ?></td>
+        </tr>
+        <tr>
+            <th>Correo Electrónico:</th><td> <?php echo Form::text('correo',"maxlength='100' size='30'"); ?></td>
+        </tr>
+<?php echo Form::hidden('id'); ?>
+</table></center>
+
+<center><?php echo Form::submit('Aceptar'); echo Form::close(); ?>
+<br>
+<?php 
+	if (Session::get('usuario')=='root')
+		echo Html::link("usuarios/lists/1", 'Ver Lista de Usuarios del Sistema'); ?>
+</center>

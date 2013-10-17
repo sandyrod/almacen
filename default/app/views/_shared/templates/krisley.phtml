@@ -2,15 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php Tag::css('krisley')?>
-<?php //Tag::css('jquery-ui-1.8.13.custom') ?>
+<?php //Tag::css('pickadate')?>
+<?php Tag::css('jquery-ui-1.8.13.custom') ?>
 <?php Tag::css('../javascript/extjs4.2/resources/css/ext-all')?>
-<?php //echo Tag::js('jquery/jquery+kumbiaphp.min')?>
-<?php // echo Tag::js('jquery/jquery.min')?>
-<?php //echo Tag::js('jquery/jquery.autocomplete')?>
-    <?php //echo Tag::js('jquery/jquery-1.5.1.min')?>
-<?php //echo Tag::js('jquery/jquery-ui-1.8.13.custom.min')?>
-<?php //echo Tag::js('js/combos')?>
-
+<?php echo Tag::js('jquery/jquery+kumbiaphp.min')?>
+<?php echo Tag::js('jquery/jquery.min')?>
+<?php //echo Tag::js('datepicker/datepicker')?>
+<?php echo Tag::js('jquery/jquery.autocomplete')?>
+    <?php echo Tag::js('jquery/jquery-1.5.1.min')?>
+<?php echo Tag::js('jquery/jquery-ui-1.8.13.custom.min')?>
+<?php echo Tag::js('js/combos')?>
+<?php //echo Tag::js('datepicker/lang/es')?>
 <?php echo Tag::js('extjs4.2/ext-all-debug')?>
 
     
@@ -69,25 +71,33 @@
                     <h2>Usuario Actual:</h2>
                 </div>
                 <div class="leftcolumn_box01_bottom">
-		    <?php echo Session::get('usuario');
-
-                    ?>
+		    <a href="<?php echo $site . 'usuarios/update/' . Session::get('id') ?>" target="_parent" ><font color= white><?php echo Session::get('usuario');?></font></a>
                 </div>            
             </div>
             
             <div id="leftcolumn_box02">
             	<h2>Menu</h2>
                 <ul>
-                    <li><a href="<? echo $site . 'cargos/create/'?>" target="_parent">Cargos</a></li>
-                    <li><a href="<? echo $site . 'unidades/create/'?>" target="_parent">Unidades</a></li>
-                    <li><a href="<? echo $site . 'articulos/create/'?>" target="_parent">Articulos</a></li>
-                    <li><a href="<? echo $site . 'departamentos/create/'?>" target="_parent">Departamento</a></li>
-                    <li><a href="<? echo $site . 'empleados/create/'?>" target="_parent">Empleado</a></li>
-                    <li><a href="<? echo $site . 'requisiciones/create/'?>" target="_parent">Requisicion</a></li>
-                    <li><a href="<? echo $site . 'despachos/create/'?>" target="_parent">Despachos</a></li>
-                    <li><a href="<? echo $site . 'usuarios/create/'?>" target="_parent">Usuarios</a></li>
+					<?php
+						if (Session::get('usuario')=='root')
+						{
+					?>
+		                    <li><a href="<? echo $site . 'usuarios/create/'?>" target="_parent">Usuarios</a></li>
+		                    <li><a href="<? echo $site . 'unidades/create/'?>" target="_parent">Unidades</a></li>
+		                    <li><a href="<? echo $site . 'departamentos/create/'?>" target="_parent">Departamento</a></li>
+					<?php
+						}
+						else
+						{
+					?>
+                    <li><a href="<? echo $site . 'empleados/create/'?>" target="_parent">Jefes</a></li>
+                    <li><a href="<? echo $site . 'requisiciones/#/'?>" target="_parent">Requisicion</a></li>
+                    <li><a href="<? echo $site . 'articulos/create/'?>" target="_parent">Art&iacute;culos</a></li>
+                    <li><a href="<? echo $site . 'despachos/consulta/'?>" target="_parent">Despachos</a></li>
                     <li>                    
-                        <?php if(Session::get('usuario')){?>
+                    <?php
+						}
+								if(Session::get('usuario')){?>
                         <a href="<? echo $site . 'usuarios/salir/'?>">Salir</a>
                     <?php }?>
                     </li>
@@ -112,7 +122,29 @@
 
             </p> <br />
             
+            <!--<div id="section1">
+            	
+          </div>
+            
+            <div id="section2">
+                <div class="section2_top">
+                    
+                </div>
+                <div class="section2_bottom">
+			      
+                    <div class="more_button"></div>
+            	</div>
+            </div>
+            -->
         </div>
+        
+        <!-- end of middle column -->
+        
+        <!-- start of right column -->
+
+        
+        
+        <!-- end of right column -->
     
     </div>
     

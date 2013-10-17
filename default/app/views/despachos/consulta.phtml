@@ -65,13 +65,10 @@
 	<div>
 		<?php view::content();
 			echo Form::open(); ?>
-		<center>Inicio de Sesi&oacute;n</center>
+		<center>Realizar Requisición</center>
                 <table>
 		<tr>
-                    <td>Usuario: </td><td><?php echo Form::text("login"); ?></td>
-                </tr>
-                <tr>
-                    <td>Clave: </td><td><?php echo Form::pass("clave"); ?></td>
+                    <td>Nro. de Requisición: </td><td><?php echo Form::text('nro_req', 'maxlength="10" size="10"'); ?></td>
                 </tr>
                 <tr><td colspan="2" align="center">
                 <?php echo Form::submit("Ingresar"); ?>

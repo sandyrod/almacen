@@ -1,0 +1,26 @@
+<?php
+	View::content();
+?>
+<table>
+<tr><th>Nombre de Usuario</th><th>Nombre</th><th>Apellido</th><th>Correo</th><th>Opciones</th></tr>
+<?php
+	foreach($listausuarios->items as $p):
+	echo "<tr><td>$p->nomb_usuario</td>";
+	echo "<td>$p->nombre</td>";
+	echo "<td>$p->apellido</td>";
+	echo "<td>$p->correo</td><td>";?>
+    
+<?php 
+    echo Html::link("usuarios/delete/$p->id", 'Eliminar');
+	echo "</td></tr>";
+	endforeach; ?>
+
+</table>
+<?php
+	View::partial('paginators/digg',FALSE,array('page'=>$listausuarios,'show'=>8,'url'=>'usuario/lists'))
+
+
+?>
+<br>
+<?php 
+	echo Html::link("usuarios/create", 'Crear nuevo'); ?>

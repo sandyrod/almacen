@@ -63,7 +63,7 @@
 
 <div id="openModal" class="modalDialog">
 	<div>
-		<?php view::content();
+		<?php View::content();
 			echo Form::open(); ?>
 		<center>Inicio de Sesi&oacute;n</center>
                 <table>

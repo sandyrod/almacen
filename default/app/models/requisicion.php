@@ -1,5 +1,5 @@
 <?php
-class Usuario extends ActiveRecord{	
+class Requisicion extends ActiveRecord{	
 
          public function paginacion($page, $per_page=25)
         {

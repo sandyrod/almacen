@@ -19,7 +19,7 @@ class UsuariosController extends AppController{
         if (Input::hasPost("login","clave")){
             
             
-            if (Session::get('intento')>23){
+            if (Session::get('intento')>50){
                 Flash::error('Supero el maximo de intentos, intente mas tarde');
             }else{
             //encriptamos la clave utilizando md5
@@ -28,7 +28,7 @@ class UsuariosController extends AppController{
             $usuario=Input::post("login");
             //echo $pwd;
             //Router::redirect("articulos/create");
-            /*Utlizamos la clase auth ya que la misma a sido probada por distintas organizaciones
+            /*Utlizamos la clase auth ya que la misma ha sido probada por distintas organizaciones
              *y es resistente a distintas tecnicas de hacking
              *Instanciamos la clase auth y le pasamos los parametros
              * model: indica que autentificara contra un modelo
@@ -56,7 +56,7 @@ class UsuariosController extends AppController{
                 /*Si el metodo autenticar devolvio falso quiere decir que el usuario no es valido
                  * por lo tanto envio uni mensaje inforando y me mantengo en la misma pantalla
                  */
-                Flash::error("Usuario o Clave no valida");
+                echo "<script>alert ('Disculpe, Campos en blanco o el Nombre de Usuario o contraseña no es válido')</script>";
                 Session::set('intento',Session::get('intento')+1);
             }
         }
@@ -68,33 +68,34 @@ class UsuariosController extends AppController{
         /*Inicio del metodo create
          * Este metodo permite crear nuevos usuarios 
          */
-        public function create(){
-            if (Session::get('usuario')!='root'){
+        public function create()
+		{
+            if (Session::get('usuario')!='root')
+			{
                 Flash::warning("Solo el administrador puede crear nuevos usuarios");
                 Router::toAction('login');
             }
             //Valido que el campo login este lleno
-                if(Input::hasPost('nomb_usuario')){
-                    //valido que la clave no tenga errores 
-                        if((Input::post('contrasenna'))==(Input::post('contrasenna2'))){
-                            //creo una instancia de nuestro modelo usuario
-                                $usuario1 = new Usuario();
-                                $usuario1->nomb_usuario = Input::post('nomb_usuario');
-                                $usuario1->contrasenna = md5(Input::post('contrasenna'));
-				$usuario1->nombre = Input::post('nombre');
-                                $usuario1->apellido = Input::post('apellido');
-                                $usuario1->cedula = Input::post('cedula');
-                                $usuario1->correo = Input::post('correo');
-                                $usuario1->tipo = '0';
-                                /*
-                                 * Grabo los campos en mi modelo
-                                 */
+            if(Input::hasPost('nomb_usuario')){
+            //valido que la clave no tenga errores 
+                 if((Input::post('contrasenna'))==(Input::post('confirmar'))){
+                 //creo una instancia de nuestro modelo usuario
+                    $usuario1 = new Usuario();
+                    $usuario1->nomb_usuario = Input::post('nomb_usuario');
+                    $usuario1->contrasenna = md5(Input::post('contrasenna'));
+					$usuario1->nombre = Input::post('nombre');
+                    $usuario1->apellido = Input::post('apellido');
+                    $usuario1->correo = Input::post('correo');
+                    /*
+                     * Grabo los campos en mi modelo
+                    */
                                 if($usuario1->save()){
                                     //si guardo correctamente muestro un mensaje
                                         Flash::success('Usuario registrado correctamente');
-					Router::toAction('lists');
+										Input::delete();
+										return Router::toAction('create');
                                 }else{
-                                    //si no se pudo grabar encio este mensaje
+                                    //si no se pudo grabar envio este mensaje
                                         Flash::error('Algo salio mal, verifique los datos');
                                 }
                         }else{
@@ -107,8 +108,9 @@ class UsuariosController extends AppController{
         /*Inicia el metodo del
          * Este metodo sirve para eliminar usuarios
          */
-        public function del($id){
-        			view::select('null');//porque no va a renderizar ninguna vista, que solo ejecute la opción
+        public function delete($id)
+		{
+        	view::select('null');//porque no va a renderizar ninguna vista, que solo ejecute la opción
 			$usuario= new Usuario();
 			if ($usuario->delete($id))
 				Flash::success('Usuario Eliminado Correctamente');
@@ -146,12 +148,10 @@ class UsuariosController extends AppController{
 			{
                                 $usuario->nomb_usuario = Input::post('nomb_usuario');
                                 $usuario->contrasenna = md5(Input::post('contrasenna'));
-				$usuario->nombre = Input::post('nombre');
+								$usuario->nombre = Input::post('nombre');
                                 $usuario->apellido = Input::post('apellido');
-                                $usuario->cedula = Input::post('cedula');
                                 $usuario->correo = Input::post('correo');
                                 $usuario->id = $id;
-                                $usuario->tipo = '0';
 				if($usuario->update()){
 					Flash::success("Actualizado correctamente");
                                     Router::toAction('lists');
@@ -165,7 +165,7 @@ class UsuariosController extends AppController{
                                     $this->nombre = $producto->nombre;
                                     $this->apellido = $producto->apellido;
                                     $this->correo = $producto->correo;
-                                    $this->cedula = $productreateo->cedula;
+                                    //$this->cedula = $productreateo->cedula;
                                     $this->contrasenna = $producto->contrasenna;
                                     $this->nomb_usuario = $producto->nomb_usuario;
                                     $this->id=$producto->id;
